@@ -1,4 +1,8 @@
 
+rightWristX = 0;
+leftWristX = 0;
+difference = 0;
+
 function setup() {
 
 video = createCapture(VIDEO);
@@ -19,16 +23,26 @@ console.log("Posenet has worked");
 
 function gotPoses(results) {
 
-    if(results.lenght > 0){
+    if(results.length > 0){
     
-    console.log(results);
-    
+        console.log(results);
+        rightWristX = results[0].pose.rightWrist.x
+        leftWristX = results[0].pose.leftWrist.x
 
+        difference = Math.floor(rightWristX - leftWristX);
+    
+        console.log("rightwristx = "+rightWristX, "leftwristx = " +leftWristX, "difference = " + difference);
+        
+        }
 
     }
-}
+
 
 function draw() {
+
+textSize(difference);
+text('Satty', 30, 200);
+fill(0, 0, 0);
 
 background("#4281ad");
 
