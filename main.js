@@ -40,10 +40,12 @@ function gotPoses(results) {
 
 function draw() {
 
-textSize(difference);
-text('Satty', 30, 200);
-fill(0, 0, 0);
-
 background("#4281ad");
+
+textSize(difference);
+text('Satty', 200, 200);
+fill(0, 0, 10);
+
+
 
 }
